@@ -21,7 +21,7 @@ include_once 'getAllProducts.php';
 
     <div>
         <div>
-            <form action="getAllProducts.php" method="post">
+            <form action="search.php" method="post">
                 <label for="typesortie">Type de sortie</label>
                 <select name="typesortie">
                     <option value="">--</option>

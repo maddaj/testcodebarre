@@ -28,12 +28,13 @@ $req->execute(array(
 function UpdateProducts()
 {
     global $PDO;
-    $req = $PDO->prepare("UPDATE produits SET quantite = '0' WHERE codebarre = :code");
+    $req = $PDO->prepare("UPDATE produits SET quantite = quantite -1 WHERE codebarre = :code AND quantite > 0");
     $req->execute(array(
-        'quantite' => $quantite,
+        'code' => $_POST['codebarre']
     ));
     return $req->fetch();
 };
+
 // On récupère un produit par son code-barre
 // function GetProductByBarcode()
 // {
