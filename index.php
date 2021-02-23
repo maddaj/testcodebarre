@@ -28,22 +28,22 @@ include_once 'getAllProducts.php';
             <th>N° de lot</th>
             <th>N° de série</th>
             <th>Date de péremption</th>
-            <th>Quantité</th>
             <?php
             if (isset($products)) {
                 foreach ($products as $product) {
+                    if ($product['quantite'] > 0) {
             ?>
-                    <tr>
-                        <td><?= $product['fournisseur']; ?></td>
-                        <td><?= $product['typestock']; ?></td>
-                        <td><?= $product['type_prothese']; ?></td>
-                        <td><?= $product['reference']; ?></td>
-                        <td><?= $product['numero_lot']; ?></td>
-                        <td><?= $product['numero_serie']; ?></td>
-                        <td><?= $product['date_peremption']; ?></td>
-                        <td><?= $product['quantite']; ?></td>
-                    </tr>
+                        <tr>
+                            <td><?= $product['fournisseur']; ?></td>
+                            <td><?= $product['typestock']; ?></td>
+                            <td><?= $product['type_prothese']; ?></td>
+                            <td><?= $product['reference']; ?></td>
+                            <td><?= $product['numero_lot']; ?></td>
+                            <td><?= $product['numero_serie']; ?></td>
+                            <td><?= $product['date_peremption']; ?></td>
+                        </tr>
             <?php
+                    }
                 }
             }
             ?>
